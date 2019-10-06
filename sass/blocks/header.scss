@@ -1,0 +1,49 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@include interval(0, $smart-min) {
+  .header {
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+}
+@include interval(0, $pc-min) {
+  .header__call {
+    display: none;
+  }
+}
+@include interval($smart, $pc-min) {
+  .header {
+    padding-top: 26px;
+    padding-bottom: 26px;
+  }
+  .header__menu {
+    margin-left: auto;
+  }
+}
+
+@include adaptive(pc) {
+  .header{
+    max-width: 1390px;
+    margin: auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .header__call {
+    @include font('RobotoCond');
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-decoration: none;
+  }
+}

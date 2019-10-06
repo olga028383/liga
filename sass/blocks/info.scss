@@ -1,0 +1,289 @@
+.info {
+  position: relative;
+}
+
+.info__title {
+  @include font('RobotoCond');
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.info__item {
+  @include font('Ptmono');
+  color: #ffffff;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    height: 3px;
+    background-color: #ffffff;
+  }
+}
+
+.info__button {
+  @include btn(16px, RobotoCond, 52px, $blue, #ffffff);
+  border-radius: 5px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+
+  &:hover {
+    opacity: 0.7;
+  }
+  &:active {
+    opacity: .8;
+  }
+}
+
+@include interval(0, $smart-min) {
+  .info {
+    padding-top: 218px;
+  }
+  .info__text {
+    margin-bottom: 70px;
+    position: relative;
+    z-index: 1;
+  }
+  .info__title {
+    margin-bottom: 28px;
+    font-size: 40px;
+    line-height: 1.2;
+  }
+  .info__item {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 44px;
+  }
+  .info__button--pc {
+    display: none
+  }
+}
+
+@include interval(0, 419px) {
+  .info__image {
+    position: absolute;
+    top: 26px;
+    right: -10px;
+  }
+}
+
+@include interval(420px, $smart-min) {
+  .info__text {
+    max-width: 350px;
+  }
+  .info__image {
+    position: absolute;
+    top: 26px;
+    right: -280px;
+  }
+}
+
+@include interval($smart, $pc-min) {
+  .info__text {
+    max-width: 492px;
+    padding-left: 63px;
+    box-sizing: border-box;
+    margin-bottom: 164px;
+    padding-top: 88px;
+  }
+  .info__title {
+    margin-bottom: 28px;
+    font-size: 60px;
+    line-height: 1.2;
+  }
+  .info__item {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 58px;
+  }
+
+}
+
+@include interval($smart, $smart-big-min) {
+  .info__image {
+    position: absolute;
+    top: 15px;
+    right: -35%;
+  }
+}
+
+@include interval(0, $smart-big-min) {
+  .info__triangle-min,
+  .info__triangle-max {
+    display: none;
+  }
+}
+
+@include adaptive(smart-big) {
+  .info {
+    display: flex;
+    align-items: flex-start;
+  }
+  .info__text {
+    flex-shrink: 0;
+  }
+  .info__image {
+    padding-top: 30px;
+    position: relative;
+  }
+  .info__point {
+
+    &--top,
+    &--bottom,
+    &--middle {
+      &::after,
+      &::before {
+        content: '';
+        width: 10px;
+        height: 10px;
+        border-radius: 10px;
+        background-color: #ffffff;
+        position: absolute;
+      }
+    }
+
+  }
+}
+
+@include interval($smart-big, $pc-min) {
+  .info__point {
+    &--top {
+      &::after {
+        top: 50px;
+        right: 70px;
+      }
+      &::before {
+        top: 50px;
+        left: 35px;
+      }
+    }
+    &--middle {
+      &::after {
+        top: 50%;
+        left: -5px;
+      }
+      &::before {
+        display: none;
+      }
+    }
+    &--bottom {
+      &::after {
+        bottom: 0;
+        left: 130px;
+      }
+      &::before {
+        bottom: 0;
+        left: 50%;
+      }
+    }
+  }
+}
+
+@include interval(0, $pc-min) {
+  .info__list {
+    padding-left: 50px;
+  }
+  .info__item {
+    &::before {
+      left: -50px;
+      top: 14px;
+      width: 33px;
+    }
+  }
+
+}
+
+@include interval($smart, $pc-min) {
+  .info__button {
+    width: 380px;
+    margin-left: 50px;
+  }
+}
+
+@include adaptive(smart) {
+  .info__button--mob {
+    display: none
+  }
+}
+
+@include adaptive(pc) {
+  .info {
+    max-width: 1500px;
+    margin: auto;
+  }
+  .info__text {
+    max-width: 715px;
+    margin-bottom: 276px;
+    margin-top: 189px;
+    margin-left: 52px;
+    margin-right: 50px;
+  }
+  .info__title {
+    margin-bottom: 26px;
+    font-size: 80px;
+    line-height: 1.2;
+
+    br {
+      display: none;
+    }
+  }
+  .info__list {
+    padding-left: 100px;
+  }
+  .info__item {
+    font-size: 22px;
+    line-height: 1.5;
+    margin-bottom: 46px;
+
+    &::before {
+      width: 64px;
+      left: -95px;
+      top: 17px;
+    }
+  }
+  .info__button {
+    width: 408px;
+    margin-left: 100px;
+  }
+  .info__image {
+    margin-top: 130px;
+    padding-top: 0;
+    padding-left: 25px;
+  }
+  .info__point {
+    &--top {
+      &::after {
+        top: 18px;
+        right: 80px;
+      }
+      &::before {
+        top: 18px;
+        left: 90px;
+      }
+    }
+    &--middle {
+      &::after {
+        top: 42%;
+        left: 37px;
+      }
+      &::before {
+        display: none;
+      }
+    }
+    &--bottom {
+      &::after {
+        bottom: 16px;
+        left: 200px;
+      }
+      &::before {
+        bottom: 16px;
+        left: 50%;
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+.container {
+  margin: 0 auto;
+  box-sizing: border-box;
+  position: relative;
+
+}
+
+@include interval(0, $smart-min) {
+  .container {
+    padding-left: 17px;
+    padding-right: 17px;
+  }
+}
+
+@include adaptive(smart) {
+  .container {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
+
+@include adaptive(pc) {
+  .container {
+    max-width: 1920px;
+  }
+}

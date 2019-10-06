@@ -1,0 +1,28 @@
+.phone{
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+@include interval(0, $pc-min){
+  .phone__text{
+    display: none;
+  }
+}
+@include adaptive(pc){
+  .phone{
+    margin-right: 80px;
+  }
+  .phone__icon {
+    margin-right: 16px;
+    width: 20px;
+  }
+  .phone__text{
+    color: #ffffff;
+    @include font('Ptmono');
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 1.2;
+  }
+}

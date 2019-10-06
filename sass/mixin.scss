@@ -1,0 +1,87 @@
+$blue: #00B2FF;
+
+//$path: '';
+//$pathFonts: '/local/templates/mass-advecs/assets/';
+
+$path: '../';
+$pathFonts : '../';
+
+$smart-min: 679px;
+$smart: 680px;
+
+$smart-big-min: 759px;
+$smart-big: 760px;
+
+$tablet-min: 990px;
+$tablet: 991px;
+
+$pc-min: 1149px;
+$pc: 1150px;
+
+@mixin clearfix(){
+
+  &:after, &:before{
+    content: "";
+    display: table;
+  }
+  &:after{
+    clear: both;
+  }
+
+}
+@mixin font($font){
+  font-family: $font, 'Arial', sans-serif;
+}
+
+//кнопка для инпутов
+
+@mixin btn($font-size: 12px,
+$font-family: "Arial",
+$height: 40px,
+$background: transparent,
+$color: #fff,
+$hover: #fff,
+$scale:1)
+{
+  font-family: $font-family, "Arial", sans-serif;
+  font-size: $font_size;
+  color: $color;
+  height: $height*$scale;
+  background: $background;
+  justify-content: center;
+  -webkit-transition: all 100ms linear;
+  -moz-transition: all 100ms linear;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  transition: all 0.2s linear;
+}
+
+//медиа
+
+@mixin adaptive($media){
+
+  @if $media == pc{
+    @media screen and (min-width: 1150px){@content}
+  }
+  @else if $media == tablet{
+    @media screen and (min-width: 991px){@content}
+  }
+  @else if $media == smart-big{
+    @media screen and (min-width: 760px){@content}
+  }
+  @else if $media == smart{
+    @media screen and (min-width: 680px){@content}
+  }
+  @else if $media == retina{
+    @media (min-resolution: 144dpi),(min-resolution: 1.5dppx){@content}
+  }
+
+}
+
+
+@mixin interval($start, $end){
+  @media screen and (min-width: $start) and (max-width: $end){
+    @content
+  }
+}

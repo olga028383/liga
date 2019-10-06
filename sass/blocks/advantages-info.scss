@@ -1,0 +1,85 @@
+.advantages-info {
+  border-top: 1px solid #ebebeb;
+  border-right: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+  border-left: 2px solid $blue;
+  background-color: #ffffff;
+  padding: 24px 26px;
+  box-sizing: border-box;
+  height: 100%;
+  transition: all 0.2s linear;
+
+  &:hover {
+    background-color: $blue;
+
+    .advantages-info__title {
+      color: #ffffff;
+    }
+    .advantages-info__text {
+      color: #ffffff;
+    }
+    .advantages-info__icon {
+      fill: #ffffff;
+    }
+  }
+}
+
+.advantages-info__icon {
+  fill: $blue;
+  transition: all 0.2s linear;
+}
+
+.advantages-info__title {
+  @include font('RobotoCond');
+
+  color: $blue;
+  line-height: 1.1;
+  transition: all 0.2s linear;
+}
+
+.advantages-info__text {
+  @include font('Ptmono');
+  font-size: 16px;
+  line-height: 1.4;
+  color: #666666;
+  transition: all 0.2s linear;
+}
+
+@include interval(0, $smart-min) {
+  .advantages-info {
+    min-height: 232px;
+  }
+  .advantages-info__icon {
+    margin-bottom: 8px;
+  }
+  .advantages-info__title {
+    margin-bottom: 12px;
+    font-size: 20px;
+  }
+}
+
+@include interval($smart, $pc-min) {
+  .advantages-info__icon {
+    margin-bottom: 6px;
+  }
+  .advantages-info__title {
+    margin-bottom: 14px;
+    font-size: 22px;
+  }
+}
+
+@include adaptive(pc) {
+  .advantages-info {
+    padding: 38px 42px;
+  }
+  .advantages-info__icon {
+    margin-bottom: 20px;
+  }
+  .advantages-info__title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  .advantages-info__text {
+    margin-bottom: 26px;
+  }
+}

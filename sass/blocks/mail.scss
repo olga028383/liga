@@ -1,0 +1,37 @@
+.mail{
+   text-decoration: none;
+   display: flex;
+   align-items: center;
+ }
+@include interval(0, $smart-min){
+  .mail{
+    margin-right: 20px;
+  }
+}
+@include interval($smart, $pc-min){
+  .mail{
+    margin-right: 32px;
+  }
+}
+@include interval(0, $pc-min){
+  .mail__text{
+    display: none;
+  }
+}
+@include adaptive(pc){
+  .mail{
+    margin-right: 86px;
+  }
+  .mail__icon {
+    margin-right: 16px;
+    width: 20px;
+  }
+  .mail__text{
+    color: #ffffff;
+    @include font('Ptmono');
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 1.2;
+  }
+}

@@ -1,0 +1,65 @@
+.triangle{
+  fill: transparent;
+}
+@include interval(0, $pc-min){
+  .triangle{
+
+    &--one,
+    &--two,
+    &--three{
+      display: none;
+    }
+
+    &--four{
+      position: absolute;
+      left: 50%;
+    }
+  }
+}
+@include interval(0, $smart-min){
+  .triangle{
+    &--four{
+      bottom: 16%;
+      margin-left: -200px;
+    }
+  }
+}
+@include interval($smart, $tablet-min){
+  .triangle{
+    &--four{
+      bottom: 16%;
+      margin-left: -100px;
+    }
+  }
+}
+@include adaptive(pc){
+  .triangle{
+    &--one,
+    &--two,
+    &--three,
+    &--four{
+      position: absolute;
+
+    }
+    &--one{
+      top: -6.5%;
+      left: -10%;
+    }
+    &--two{
+      top: 25%;
+      left: 100%;
+      transform: rotate(180deg);
+    }
+    &--four{
+      left: 45%;
+      top: 19%;
+    }
+
+    &--three{
+      left: -40%;
+      bottom: 8.5%;
+      transform: rotate(180deg);
+    }
+  }
+
+}

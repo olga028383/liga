@@ -1,0 +1,14 @@
+.btn {
+  @include btn_link(17px, Opensansbold, 48px, transparent, #444);
+  border: 2px solid #444;
+  //letter-spacing: 1px;
+  @include transition(.2s);
+
+  &:hover {
+    background: #444;
+    color: #fff;
+  }
+  &:active {
+    opacity: .8;
+  }
+}

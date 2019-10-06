@@ -1,0 +1,46 @@
+.logo {
+  text-decoration: none;
+}
+
+.logo__icon {
+  margin-right: 15px;
+}
+
+@include interval(0, $smart-min) {
+  .logo__icon {
+    width: 40px;
+    height: 40px;
+  }
+  .logo__slogan {
+    display: none;
+  }
+}
+
+@include adaptive(smart) {
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  .logo__icon {
+    width: 54px;
+    height: 50px;
+  }
+  .logo__title {
+    display: block;
+    @include font('RobotoCond');
+    font-style: normal;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 25px;
+    line-height: 1.2;
+  }
+  .logo__subtitle {
+    display: block;
+    @include font('Roboto');
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    color: #788891;
+  }
+}

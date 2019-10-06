@@ -1,0 +1,107 @@
+.menu {
+
+  &--open {
+    .menu__list {
+      visibility: visible;
+      opacity: 1;
+      z-index: 1;
+    }
+
+    .menu__button {
+      &::before {
+        transform: rotate(45deg);
+        margin-top: -17%;
+      }
+      &::after {
+        transform: rotate(-45deg);
+        margin-top: -17%;
+      }
+    }
+  }
+}
+
+.menu__button {
+  background: none;
+  border: none;
+  outline: none;
+  position: relative;
+  width: 40px;
+  height: 40px;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 36px;
+    margin-left: -18px;
+    height: 1px;
+    background: #ffffff;
+    transition: all 0.2s linear;
+    top: 65%;
+  }
+  &::before {
+    margin-top: -35%;
+  }
+}
+
+.menu__list {
+  visibility: hidden;
+  opacity: 0;
+  z-index: -1;
+  position: absolute;
+  background-color: #ffffff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  transition: all 0.2s linear;
+}
+
+.menu__link {
+  @include font('Ptmono');
+  display: block;
+  color: #666666;
+  text-decoration: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  line-height: 1.2;
+  padding-left: 10px;
+  padding-right: 10px;
+  transition: all 0.2s linear;
+}
+
+@include interval(0, $smart-min) {
+  .menu {
+    margin-right: 25px;
+    margin-left: auto;
+  }
+  .menu__list {
+    left: -17px;
+    right: -17px;
+    top: 100%;
+  }
+}
+
+@include adaptive(smart) {
+  .menu {
+    position: relative;
+  }
+  .menu__list {
+    width: 300px;
+  }
+}
+
+@include interval($smart, $pc-min) {
+  .menu {
+    margin-right: 35px;
+  }
+  .menu__list {
+    margin-left: -120px;
+  }
+}
+
+@include adaptive(pc) {
+  .menu {
+    margin-left: 118px;
+    margin-right: auto;
+  }
+}

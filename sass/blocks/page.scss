@@ -1,0 +1,47 @@
+.page{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.page__bottom-line{
+  position: relative;
+  flex-grow: 1;
+  min-width: 320px;
+
+}
+
+@include interval(0, 321px){
+  .page__top-line{
+    background-image: url($path + '/img/fon-mob.jpg');
+    margin-bottom: 36px;
+  }
+}
+@include interval(322px, 779px){
+  .page__top-line{
+    background-image: url($path + '/img/fon-tablet.jpg');
+    margin-bottom: 54px;
+    background-position: top right;
+  }
+}
+@include adaptive(smart-big){
+  .page__top-line{
+    background-color: #1B2D37;
+  }
+  .page__top-line{
+    background-image: url($path + '/img/fon-pc.png');
+    margin-bottom: 54px;
+    background-position: top right;
+  }
+}
+@include adaptive(pc){
+  .page__top-line{
+    margin-bottom: 112px;
+    //height: 100vh;
+  }
+  .page__bottom-line{
+    max-width: 1220px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
