@@ -1,16 +1,16 @@
 @font-face {
   font-family: 'RobotoCond';
-  src: url('/fonts/Robotocondensed.woff2') format('woff2'),
-  url('/fonts/Robotocondensed.woff') format('woff')
+  src: url($path + '/fonts/Robotocondensed.woff2') format('woff2'),
+  url($path + '/fonts/Robotocondensed.woff') format('woff')
 }
 @font-face {
   font-family: 'Roboto';
-  src: url('/fonts/Roboto.woff2') format('woff2'),
-  url('/fonts/Roboto.woff') format('woff')
+  src: url($path + '/fonts/Roboto.woff2') format('woff2'),
+  url($path + '/fonts/Roboto.woff') format('woff')
 }
 @font-face {
   font-family: 'Ptmono';
-  src: url('/fonts/ptmono.woff2') format('woff2'),
-  url('/fonts/ptmono.woff') format('woff');
+  src: url($path + '/fonts/ptmono.woff2') format('woff2'),
+  url($path + '/fonts/ptmono.woff') format('woff');
   font-weight: bold;
 }
