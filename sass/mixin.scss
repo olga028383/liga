@@ -1,10 +1,6 @@
 $blue: #00B2FF;
 
-//$path: '';
-//$pathFonts: '/local/templates/mass-advecs/assets/';
-
 $path: '../';
-$pathFonts : '../';
 
 $smart-min: 679px;
 $smart: 680px;
@@ -32,8 +28,6 @@ $pc: 1150px;
 @mixin font($font){
   font-family: $font, 'Arial', sans-serif;
 }
-
-//кнопка для инпутов
 
 @mixin btn($font-size: 12px,
 $font-family: "Arial",
@@ -78,7 +72,6 @@ $scale:1)
   }
 
 }
-
 
 @mixin interval($start, $end){
   @media screen and (min-width: $start) and (max-width: $end){
