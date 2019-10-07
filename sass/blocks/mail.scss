@@ -21,10 +21,12 @@
 @include adaptive(pc){
   .mail{
     margin-right: 86px;
+    max-width: 160px;
   }
   .mail__icon {
     margin-right: 16px;
     width: 20px;
+    flex-shrink: 0;
   }
   .mail__text{
     color: #ffffff;

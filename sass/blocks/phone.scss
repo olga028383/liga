@@ -12,10 +12,12 @@
 @include adaptive(pc){
   .phone{
     margin-right: 80px;
+    max-width: 220px;
   }
   .phone__icon {
     margin-right: 16px;
     width: 20px;
+    flex-shrink: 0;
   }
   .phone__text{
     color: #ffffff;

@@ -10,7 +10,6 @@
   text-transform: uppercase;
   color: #ffffff;
 }
-
 .info__item {
   @include font('Ptmono');
   color: #ffffff;
@@ -69,6 +68,8 @@
     position: absolute;
     top: 26px;
     right: -10px;
+    width: 292px;
+    height: 223px;
   }
 }
 
@@ -80,6 +81,8 @@
     position: absolute;
     top: 26px;
     right: -280px;
+    width: 500px;
+    height: 386px;
   }
 }
 
@@ -130,6 +133,7 @@
   .info__image {
     padding-top: 20px;
     position: relative;
+    flex-shrink: 0;
   }
   .info__point {
 
@@ -151,6 +155,10 @@
 }
 
 @include interval($smart-big, $pc-min) {
+  .info__image {
+    width: 500px;
+    height: 386px;
+  }
   .info__point {
     &--top {
       &::after {
@@ -254,6 +262,8 @@
     margin-top: 130px;
     padding-top: 0;
     padding-left: 25px;
+    width: 710px;
+    height: 518px;
   }
   .info__point {
     &--top {
